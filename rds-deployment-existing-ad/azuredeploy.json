@@ -107,7 +107,7 @@
         "publicIpRef": "publicIp",
         "brokerIpRef": "brokerpublicIp",
         "gatewayIpRef": "gatewaypublicIp",
-        "assetLocation": "https://192.30.253.113/dasutton/azure-quickstart-templates/master/rds-deployment-existing-ad"
+        "assetLocation": "https://mimfiles.blob.core.windows.net/storage"
     },
     "resources": [
         {
