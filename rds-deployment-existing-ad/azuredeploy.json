@@ -107,7 +107,7 @@
         "publicIpRef": "publicIp",
         "brokerIpRef": "brokerpublicIp",
         "gatewayIpRef": "gatewaypublicIp",
-        "assetLocation": "https://mimfiles.file.core.windows.net/storage"
+        "assetLocation": "https://mimfiles.file.core.windows.net/storage/"
     },
     "resources": [
         {
@@ -448,7 +448,7 @@
                         "typeHandlerVersion": "2.11",
                         "autoUpgradeMinorVersion": true,
                         "settings": {
-                            "ModulesUrl": "[concat(variables('assetLocation'),'/Configuration.zip')]",
+                            "ModulesUrl": "[concat(uri(deployment().properties.templateLink.uri,'Configuration.zip')]",
                             "ConfigurationFunction": "Configuration.ps1\\Gateway",
                             "Properties": {
                                 "DomainName": "[parameters('adDomainName')]",
@@ -531,7 +531,7 @@
                         "typeHandlerVersion": "2.11",
                         "autoUpgradeMinorVersion": true,
                         "settings": {
-                            "ModulesUrl": "[concat(variables('assetLocation'),'/Configuration.zip')]",
+                            "ModulesUrl": "[concat(uri(deployment().properties.templateLink.uri,'Configuration.zip')]",
                             "ConfigurationFunction": "Configuration.ps1\\SessionHost",
                             "Properties": {
                                 "DomainName": "[parameters('adDomainName')]",
@@ -613,7 +613,7 @@
                 "typeHandlerVersion": "2.11",
                 "autoUpgradeMinorVersion": true,
                 "settings": {
-                    "modulesUrl": "[concat(variables('assetLocation'),'/Configuration.zip')]",
+                    "modulesUrl": "[concat(uri(deployment().properties.templateLink.uri,'Configuration.zip')]",
                     "configurationFunction": "Configuration.ps1\\RDSDeployment",
                     "Properties": {
                         "adminCreds": {
